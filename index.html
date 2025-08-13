@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>islam99 — Download & Learn</title>
+  <meta name="description" content="Download the islam99 app and explore beautifully organized information about Islam, including the Five Pillars, key concepts, and live prayer times." />
+  <meta name="theme-color" content="#0b3d2e" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="islam99 — Download & Learn" />
+  <meta property="og:description" content="A clean, modern way to explore Islam and get prayer times. Download the islam99 app." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'><rect width='100%' height='100%' fill='%230b3d2e'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='64' fill='white'>islam99</text></svg>" />
+
+  <style>
+    :root{
+      --bg: #f7faf8;
+      --card: #ffffff;
+      --text: #11322a;
+      --muted: #5c746c;
+      --brand: #0b3d2e;
+      --brand-2: #17a589;
+      --ring: rgba(23,165,137,.35);
+      --shadow: 0 10px 25px rgba(0,0,0,.08);
+      --radius: 16px;
+      --radius-sm: 12px;
+      --maxw: 1200px;
+      --gradient: radial-gradient(1200px 600px at 90% -10%, rgba(23,165,137,.15), transparent 60%), radial-gradient(800px 400px at 10% 0%, rgba(11,61,46,.12), transparent 60%), linear-gradient(180deg, #f8fbfa, #eef6f2);
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg: #0e1512;
+        --card: #121c18;
+        --text: #e8f3ee;
+        --muted: #9cb3ab;
+        --brand-2:#22d1b5;
+        --gradient: radial-gradient(1200px 600px at 90% -10%, rgba(34,209,181,.2), transparent 60%), radial-gradient(800px 400px at 10% 0%, rgba(23,165,137,.18), transparent 60%), linear-gradient(180deg, #0e1512, #0b1310);
+        --shadow: 0 12px 30px rgba(0,0,0,.35);
+      }
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Inter,Arial,sans-serif;background:var(--bg);color:var(--text);scroll-behavior:smooth}
+    a{color:var(--brand-2);text-decoration:none}
+    a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+      outline: 3px solid var(--ring);
+      outline-offset: 2px;
+      border-radius: 10px;
+    }
+
+    /* Header / Nav */
+    header{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter: saturate(120%) blur(8px);
+      background: color-mix(in oklab, var(--bg) 85%, transparent);
+      border-bottom: 1px solid color-mix(in oklab, var(--text) 10%, transparent);
+    }
+    .nav{
+      max-width:var(--maxw);margin:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;gap:10px;
+    }
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--text);letter-spacing:.3px}
+    .brand svg{width:34px;height:34px}
+    .navlinks{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+    .navlinks a{padding:8px 10px;border-radius:10px;color:var(--text);opacity:.9}
+    .navlinks a:hover{background:color-mix(in oklab, var(--brand) 10%, transparent);color:var(--text)}
+
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;background:var(--brand);color:#fff;border:none;border-radius:14px;box-shadow:var(--shadow);cursor:pointer;font-weight:700}
+    .btn.secondary{background:var(--brand-2);color:#08201a}
+    .btn.ghost{background:transparent;color:var(--brand-2);border:1.5px solid var(--brand-2)}
+    .btn svg{width:20px;height:20px}
+
+    /* Hero */
+    .hero{
+      background: var(--gradient);
+      padding: 64px 20px 40px;
+      border-bottom: 1px solid color-mix(in oklab, var(--text) 10%, transparent);
+    }
+    .hero-inner{max-width:var(--maxw);margin:auto;display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+    .kicker{display:inline-flex;gap:10px;align-items:center;color:var(--brand);font-weight:800;background:color-mix(in oklab, var(--brand) 8%, transparent);padding:6px 10px;border-radius:999px}
+    .title{font-size:clamp(28px,5vw,46px);line-height:1.1;margin:14px 0 8px}
+    .subtitle{color:var(--muted);font-size:clamp(15px,2.2vw,18px);max-width:60ch}
+    .cta{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+    .mock{
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 12px;
+      position: relative;
+      aspect-ratio: 3/2;
+      overflow: hidden;
+    }
+    .mock::after{
+      content:"";
+      position:absolute;inset:0;
+      background:
+        radial-gradient(600px 300px at 80% 0%, rgba(23,165,137,.15), transparent 60%),
+        radial-gradient(500px 250px at 10% 100%, rgba(11,61,46,.12), transparent 60%);
+      pointer-events:none;
+    }
+    .phone{
+      width:min(92%,480px);aspect-ratio:9/19;border-radius:28px;border:10px solid #0a0a0a;margin:auto;background:
+        linear-gradient(180deg,#0e1e19,#0c1714);
+      box-shadow: 0 20px 40px rgba(0,0,0,.25);
+      position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-4deg);
+      display:grid;place-items:center;overflow:hidden;
+    }
+    .phone-screen{
+      width:100%;height:100%;background:
+        radial-gradient(400px 240px at 50% -10%, rgba(34,209,181,.2), transparent 60%),
+        #0e1512;
+      display:grid;grid-template-rows:auto 1fr auto;color:#d9fff5;
+      font-weight:600;
+    }
+    .phone-top{padding:16px;text-align:center;border-bottom:1px solid rgba(255,255,255,.08)}
+    .phone-body{padding:14px;display:grid;gap:10px;align-content:start}
+    .pill{padding:10px 12px;border:1px solid rgba(255,255,255,.12);border-radius:12px;background:rgba(255,255,255,.03)}
+    .phone-bottom{padding:10px;display:flex;gap:10px;justify-content:center;border-top:1px solid rgba(255,255,255,.08)}
+    .dot{width:8px;height:8px;border-radius:999px;background:#22d1b5;box-shadow:0 0 0 6px rgba(34,209,181,.15)}
+
+    /* Sections */
+    section{max-width:var(--maxw);margin:0 auto;padding:56px 20px}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+    .card{
+      grid-column: span 4;
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:20px;
+    }
+    .card h3{margin:0 0 8px}
+    .muted{color:var(--muted)}
+    .features .card{display:flex;gap:12px;align-items:flex-start}
+    .avatar{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--brand-2),#1f8e7a);display:grid;place-items:center;color:#05241b;font-weight:900}
+
+    /* Learn Section */
+    .learn .card{grid-column: span 6}
+    details{border:1px solid color-mix(in oklab, var(--text) 10%, transparent);border-radius:12px;padding:12px;background:color-mix(in oklab, var(--brand) 5%, transparent)}
+    summary{cursor:pointer;font-weight:800}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:"+";float:right;font-weight:900}
+    details[open] summary::after{content:"–"}
+
+    /* Download cards */
+    .dls .card{grid-column: span 6;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center}
+    .store-badge{display:inline-flex;gap:10px;align-items:center;padding:10px 14px;border-radius:12px;border:1.5px dashed color-mix(in oklab, var(--text) 18%, transparent)}
+    .store-badge svg{width:22px;height:22px}
+
+    /* Prayer Times widget */
+    .widget{display:grid;gap:14px}
+    .w-row{display:flex;gap:10px;flex-wrap:wrap}
+    .w-row input,.w-row select{
+      padding:10px 12px;border-radius:12px;border:1px solid color-mix(in oklab, var(--text) 18%, transparent);
+      background:var(--card);color:var(--text)
+    }
+    .table{
+      width:100%;border-collapse:separate;border-spacing:0 8px
+    }
+    .table th,.table td{padding:10px 12px;text-align:left}
+    .table tr{
+      background:var(--card);box-shadow:var(--shadow);
+    }
+    .badge{display:inline-flex;align-items:center;gap:8px;background:color-mix(in oklab, var(--brand) 12%, transparent);border:1px solid color-mix(in oklab, var(--brand) 25%, transparent);padding:6px 10px;border-radius:999px}
+
+    /* FAQ */
+    .faq .card{grid-column: span 6}
+
+    /* Footer */
+    footer{padding:28px 20px;border-top:1px solid color-mix(in oklab, var(--text) 10%, transparent);background:linear-gradient(180deg, transparent, color-mix(in oklab, var(--brand) 6%, transparent))}
+    .foot-inner{max-width:var(--maxw);margin:auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px}
+    .links{display:flex;gap:12px;flex-wrap:wrap}
+    .chip{padding:8px 12px;border-radius:999px;background:var(--card);box-shadow:var(--shadow)}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-inner{grid-template-columns:1fr}
+      .phone{transform:translate(-50%,-50%) rotate(0deg)}
+    }
+    @media (max-width: 800px){
+      .card{grid-column: span 6}
+    }
+    @media (max-width: 540px){
+      .card,.learn .card,.dls .card,.faq .card{grid-column: 1 / -1}
+    }
+
+    /* Nice entrances (respect reduced motion) */
+    @media (prefers-reduced-motion: no-preference) {
+      [data-animate]{opacity:0;transform:translateY(6px);transition:opacity .6s ease, transform .6s ease}
+      [data-animate].in{opacity:1;transform:none}
+    }
+  </style>
+</head>
+<body>
+  <!-- Accessible Skip -->
+  <a href="#download" class="chip" style="position:absolute;left:-9999px;top:10px" onfocus="this.style.left='10px'" onblur="this.style.left='-9999px'">Skip to Download</a>
+
+  <header role="banner">
+    <nav class="nav" aria-label="Primary">
+      <div class="brand" aria-label="islam99 logo">
+        <!-- Logo -->
+        <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1">
+              <stop offset="0" stop-color="#22d1b5"/><stop offset="1" stop-color="#0b3d2e"/>
+            </linearGradient>
+          </defs>
+          <circle cx="32" cy="32" r="30" fill="url(#g)"/>
+          <path d="M20 38c4-9 12-14 24-14-6 2-9 6-10 12 5 1 9 4 10 10-6-1-11-4-14-9-2 4-6 6-10 6 0-2 0-3 0-5z" fill="#fff" opacity=".95"/>
+        </svg>
+        <span>islam99</span>
+      </div>
+      <div class="navlinks" role="navigation">
+        <a href="#features">Features</a>
+        <a href="#download">Download</a>
+        <a href="#learn">Learn</a>
+        <a href="#prayer-times">Prayer Times</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <div>
+          <span class="kicker" aria-label="App category">Faith · Learning · Community</span>
+          <h1 id="hero-title" class="title">Discover, learn, and stay connected with <span style="color:var(--brand)">islam99</span>.</h1>
+          <p class="subtitle">A clean, modern companion for Muslims and learners—beautifully organized content about Islam, practical tools like prayer times and Qibla info, and a delightful user experience.</p>
+          <div class="cta">
+            <a class="btn" href="https://example.com/islam99.apk" rel="nofollow noopener" aria-label="Download Android APK">
+              <!-- Android icon -->
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="white" d="M17 7h1a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1h-2V7Zm-11 0h1v8H5a1 1 0 0 1-1-1V9a2 2 0 0 1 2-2Zm3 0h6v9a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1V7Zm7.5-4.06.86 1.49a6.98 6.98 0 0 0-9.72 0l.86-1.5a.75.75 0 0 0-1.3-.74l-1.03 1.8a.75.75 0 1 0 1.3.74l.31-.54A5.5 5.5 0 0 1 18.7 3.9l.31.54a.75.75 0 1 0 1.3-.74l-1.04-1.8a.75.75 0 1 0-1.3.74Z"/></svg>
+              <span>Download for Android</span>
+            </a>
+            <a class="btn secondary" href="https://example.com/islam99-ios" rel="nofollow noopener" aria-label="Download for iOS / TestFlight">
+              <!-- Apple icon -->
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#08201a" d="M16.36 12.93c.02 2.47 2.17 3.29 2.2 3.3-.02.07-.34 1.18-1.13 2.34-.69 1.02-1.41 2.04-2.54 2.06-1.11.02-1.47-.66-2.75-.66-1.28 0-1.69.64-2.76.68-1.1.04-1.95-1.1-2.64-2.12-1.43-2.08-2.52-5.88-1.05-8.45.73-1.27 2.04-2.08 3.47-2.1 1.08-.02 2.1.73 2.75.73.65 0 1.9-.9 3.21-.77.55.02 2.11.22 3.1 1.65-.08.05-1.84 1.07-1.76 3.34ZM13.9 4.3c.59-.72.99-1.74.88-2.77-.85.03-1.92.57-2.55 1.3-.56.63-1.03 1.66-.9 2.65.95.07 1.93-.49 2.57-1.18Z"/></svg>
+              <span>Get iOS (TestFlight)</span>
+            </a>
+            <a class="btn ghost" href="#download" aria-label="See all download options">See all options</a>
+          </div>
+          <p class="muted" style="margin-top:8px">Replace the two links above with your real store/APK URLs when ready.</p>
+        </div>
+
+        <!-- App Mockup -->
+        <div class="mock" aria-hidden="true">
+          <div class="phone" role="img" aria-label="islam99 app preview">
+            <div class="phone-screen">
+              <div class="phone-top">islam99</div>
+              <div class="phone-body">
+                <div class="pill">Quran • Hadith • Duʿā’</div>
+                <div class="pill">Prayer times & Qibla</div>
+                <div class="pill">Guides for beginners</div>
+                <div style="display:flex;gap:10px;align-items:center;margin-top:4px">
+                  <span class="dot"></span><span>Today • Fajr 5:02</span>
+                </div>
+              </div>
+              <div class="phone-bottom">
+                <span class="pill" style="color:#9feee0;border-color:rgba(255,255,255,.18)">Explore</span>
+                <span class="pill" style="color:#9feee0;border-color:rgba(255,255,255,.18)">Learn</span>
+                <span class="pill" style="color:#9feee0;border-color:rgba(255,255,255,.18)">Tools</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" aria-labelledby="features-title">
+      <h2 id="features-title" class="title" style="font-size:clamp(22px,3.6vw,34px)">What you get with islam99</h2>
+      <div class="grid features" role="list">
+        <article class="card" role="listitem" data-animate>
+          <div class="avatar">99</div>
+          <div>
+            <h3>Beautifully organized knowledge</h3>
+            <p class="muted">Clear introductions to beliefs, worship, character, and history—curated for both newcomers and practicing Muslims.</p>
+          </div>
+        </article>
+        <article class="card" role="listitem" data-animate>
+          <div class="avatar">🕋</div>
+          <div>
+            <h3>Tools you’ll actually use</h3>
+            <p class="muted">Prayer times, Qibla hints, fasting reminders, and quick access to duʿā’ and adhkār collections.</p>
+          </div>
+        </article>
+        <article class="card" role="listitem" data-animate>
+          <div class="avatar">🌙</div>
+          <div>
+            <h3>Clean, respectful design</h3>
+            <p class="muted">Accessible typography, dark mode, and a distraction‑free layout that puts the content first.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- DOWNLOAD -->
+    <section id="download" aria-labelledby="download-title">
+      <h2 id="download-title" class="title" style="font-size:clamp(22px,3.6vw,34px)">Download islam99</h2>
+      <div class="grid dls">
+        <div class="card" data-animate>
+          <div class="avatar">🤖</div>
+          <div>
+            <h3>Android</h3>
+            <p class="muted">Install via APK or Google Play (when available).</p>
+            <div class="w-row">
+              <a class="store-badge" href="https://example.com/islam99.apk" rel="nofollow noopener">
+                <svg viewBox="0 0 24 24"><path fill="currentColor" d="M3 4.8c0-.99.8-1.8 1.8-1.8h8.7c.99 0 1.8.81 1.8 1.8v14.4c0 .99-.81 1.8-1.8 1.8H4.8A1.8 1.8 0 0 1 3 19.2V4.8Zm12.4 5.2 3.3-3.3c.5-.5 1.3-.5 1.8 0 .5.5.5 1.3 0 1.8L18 12l2.5 2.5c.5.5.5 1.3 0 1.8s-1.3.5-1.8 0l-3.3-3.3V10Z"/></svg>
+                <span>Download APK</span>
+              </a>
+              <a class="store-badge" href="#" aria-disabled="true" onclick="event.preventDefault()">
+                <svg viewBox="0 0 24 24"><path fill="currentColor" d="M21 7v10a2 2 0 0 1-2 2H9l-6-6 6-6h10a2 2 0 0 1 2 2Z"/></svg>
+                <span>Google Play (soon)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" data-animate>
+          <div class="avatar"></div>
+          <div>
+            <h3>iOS</h3>
+            <p class="muted">Join TestFlight while the App Store release is under review.</p>
+            <div class="w-row">
+              <a class="store-badge" href="https://example.com/islam99-ios" rel="nofollow noopener">
+                <svg viewBox="0 0 24 24"><path fill="currentColor" d="M20 12 4 21V3l16 9Z"/></svg>
+                <span>Get on TestFlight</span>
+              </a>
+              <a class="store-badge" href="#" aria-disabled="true" onclick="event.preventDefault()">
+                <svg viewBox="0 0 24 24"><path fill="currentColor" d="M5 3h14a2 2 0 0 1 2 2v14l-8-4-8 4V5a2 2 0 0 1 2-2Z"/></svg>
+                <span>App Store (soon)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEARN -->
+    <section id="learn" aria-labelledby="learn-title" class="learn">
+      <h2 id="learn-title" class="title" style="font-size:clamp(22px,3.6vw,34px)">Learn about Islam</h2>
+      <div class="grid">
+        <article class="card" data-animate>
+          <h3>Five Pillars of Islam</h3>
+          <div class="widget" aria-label="Five Pillars">
+            <details open>
+              <summary>1. Shahādah — Testimony of Faith</summary>
+              <p class="muted">Affirming that there is no deity worthy of worship except Allah, and that Muhammad ﷺ is His Messenger.</p>
+            </details>
+            <details>
+              <summary>2. Ṣalāh — Prayer</summary>
+              <p class="muted">Five daily prayers at set times: Fajr, Ẓuhr, ʿAṣr, Maghrib, and ʿIshā’.</p>
+            </details>
+            <details>
+              <summary>3. Zakāh — Almsgiving</summary>
+              <p class="muted">A due on eligible wealth to purify it and support those in need.</p>
+            </details>
+            <details>
+              <summary>4. Ṣawm — Fasting in Ramaḍān</summary>
+              <p class="muted">Abstaining from food, drink, and marital relations from dawn to sunset with devotion and patience.</p>
+            </details>
+            <details>
+              <summary>5. Ḥajj — Pilgrimage</summary>
+              <p class="muted">The sacred pilgrimage to Makkah once in a lifetime for those who are able.</p>
+            </details>
+          </div>
+        </article>
+
+        <article class="card" data-animate>
+          <h3>Core Sources & Concepts</h3>
+          <ul class="muted" style="line-height:1.7">
+            <li><strong>Qur’an:</strong> The final revelation in Arabic, preserved and recited by Muslims worldwide.</li>
+            <li><strong>Hadith & Sunnah:</strong> Prophetic teachings and practices explaining the Qur’an’s guidance.</li>
+            <li><strong>ʿAqīdah:</strong> The creed outlining belief in Allah, angels, scriptures, prophets, the Last Day, and divine decree.</li>
+            <li><strong>Adab & Akhlāq:</strong> Etiquette and character—kindness, honesty, patience, and mercy.</li>
+          </ul>
+          <p class="muted">The islam99 app curates beginner‑friendly guides, duʿā’, and practical checklists for daily worship.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PRAYER TIMES -->
+    <section id="prayer-times" aria-labelledby="pt-title">
+      <h2 id="pt-title" class="title" style="font-size:clamp(22px,3.6vw,34px)">Today’s Prayer Times</h2>
+      <div class="grid">
+        <article class="card" style="grid-column:1/-1">
+          <div class="widget" aria-live="polite">
+            <div class="w-row">
+              <input id="city" name="city" placeholder="City (e.g., Mumbai)" inputmode="text" aria-label="City"/>
+              <input id="country" name="country" placeholder="Country (e.g., India)" inputmode="text" aria-label="Country"/>
+              <select id="method" aria-label="Calculation Method" title="Calculation Method">
+                <option value="2">ISNA</option>
+                <option value="3">MWL</option>
+                <option value="4" selected>Umm al-Qura</option>
+                <option value="5">Egyptian General Authority</option>
+                <option value="12">Gulf Region</option>
+                <option value="13">Kuwait</option>
+                <option value="14">Qatar</option>
+                <option value="15">JAF (Singapore)</option>
+                <option value="1">University of Islamic Sciences, Karachi</option>
+              </select>
+              <button class="btn" id="btnFetch" type="button" aria-label="Fetch prayer times">Fetch</button>
+              <button class="btn ghost" id="btnLocate" type="button" aria-label="Detect my location">Use my location</button>
+            </div>
+            <div class="w-row">
+              <span class="badge" id="where">Location: —</span>
+              <span class="badge" id="dateLabel">Date: —</span>
+              <span class="badge" id="tz">TZ: —</span>
+            </div>
+            <div style="overflow-x:auto">
+              <table class="table" id="times" aria-describedby="pt-title">
+                <thead>
+                  <tr>
+                    <th>Fajr</th><th>Sunrise</th><th>Dhuhr</th><th>Asr</th><th>Maghrib</th><th>Isha</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td colspan="6" class="muted">Enter a city & country, or use geolocation.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="muted" style="margin:6px 2px 0">Powered by the free <a href="https://aladhan.com/prayer-times-api" target="_blank" rel="noopener">Aladhan API</a>. Adjust the calculation method for your region if needed.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" aria-labelledby="faq-title" class="faq">
+      <h2 id="faq-title" class="title" style="font-size:clamp(22px,3.6vw,34px)">Frequently Asked Questions</h2>
+      <div class="grid">
+        <article class="card" data-animate>
+          <h3>Is the information suitable for beginners?</h3>
+          <p class="muted">Yes. islam99 presents core concepts in simple language, with references to explore further.</p>
+        </article>
+        <article class="card" data-animate>
+          <h3>Does the app need internet?</h3>
+          <p class="muted">Most guides work offline. Tools like live prayer times require internet access to fetch local timings.</p>
+        </article>
+        <article class="card" data-animate>
+          <h3>Is there dark mode?</h3>
+          <p class="muted">Absolutely—your system preference is respected automatically.</p>
+        </article>
+        <article class="card" data-animate>
+          <h3>How do I suggest improvements?</h3>
+          <p class="muted">Reach us via the contact section or email below. We’d love to hear from you 💡.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title" class="title" style="font-size:clamp(22px,3.6vw,34px)">Contact</h2>
+      <div class="grid">
+        <article class="card" style="grid-column:1/-1">
+          <p class="muted">Questions, feedback, or collaboration? Send us a message.</p>
+          <form class="widget" onsubmit="openMail(event)" aria-label="Contact form">
+            <div class="w-row">
+              <input id="name" name="name" placeholder="Your name" required />
+              <input id="email" name="email" type="email" placeholder="Your email" required />
+            </div>
+            <textarea id="msg" name="message" rows="4" placeholder="Your message" required style="padding:12px;border-radius:12px;border:1px solid color-mix(in oklab, var(--text) 18%, transparent);background:var(--card);color:var(--text)"></textarea>
+            <button class="btn" type="submit">Send</button>
+          </form>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="foot-inner">
+      <div class="brand">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><use href="#"/></svg>
+        <strong>islam99</strong>
+      </div>
+      <div class="links">
+        <span class="chip">© <span id="year"></span> islam99</span>
+        <a class="chip" href="#download">Download</a>
+        <a class="chip" href="#learn">Learn</a>
+        <a class="chip" href="#prayer-times">Prayer Times</a>
+        <a class="chip" href="mailto:hello@islam99.app">hello@islam99.app</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth entrance animation (respect reduced motion)
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(!prefersReduced){
+      const observer = new IntersectionObserver((entries)=>{
+        for(const e of entries){
+          if(e.isIntersecting){ e.target.classList.add('in'); observer.unobserve(e.target); }
+        }
+      },{threshold:.12});
+      document.querySelectorAll('[data-animate]').forEach(el=>observer.observe(el));
+    }
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Contact -> mailto:
+    function openMail(e){
+      e.preventDefault();
+      const name = encodeURIComponent(document.getElementById('name').value.trim());
+      const email = encodeURIComponent(document.getElementById('email').value.trim());
+      const msg = encodeURIComponent(document.getElementById('msg').value.trim());
+      const subject = `islam99 website message from ${name}`;
+      const body = `From: ${name} <${email}>\n\n${msg}`;
+      window.location.href = `mailto:hello@islam99.app?subject=${subject}&body=${encodeURIComponent(body)}`;
+    }
+
+    // Prayer Times (via Aladhan API)
+    const byCity = (city, country, method) =>
+      `https://api.aladhan.com/v1/timingsByCity?city=${encodeURIComponent(city)}&country=${encodeURIComponent(country)}&method=${method}`;
+    const byCoords = (lat, lon, method) =>
+      `https://api.aladhan.com/v1/timings?latitude=${lat}&longitude=${lon}&method=${method}`;
+
+    const $times = document.querySelector('#times tbody');
+    const $where = document.getElementById('where');
+    const $dateLabel = document.getElementById('dateLabel');
+    const $tz = document.getElementById('tz');
+
+    async function fetchTimes(url, label){
+      try{
+        const res = await fetch(url, {headers:{'Accept':'application/json'}});
+        if(!res.ok) throw new Error('Network error');
+        const data = await res.json();
+        if(data.code !== 200) throw new Error('API error');
+        const t = data.data.timings;
+        const meta = data.data.meta;
+        $times.innerHTML = `
+          <tr>
+            <td>${sanitizeTime(t.Fajr)}</td>
+            <td>${sanitizeTime(t.Sunrise)}</td>
+            <td>${sanitizeTime(t.Dhuhr)}</td>
+            <td>${sanitizeTime(t.Asr)}</td>
+            <td>${sanitizeTime(t.Maghrib)}</td>
+            <td>${sanitizeTime(t.Isha)}</td>
+          </tr>`;
+        const gDate = data.data.date.readable;
+        const hDate = data.data.date.hijri.day + ' ' + data.data.date.hijri.month.en + ' ' + data.data.date.hijri.year + ' AH';
+        $dateLabel.textContent = `Date: ${gDate} • ${hDate}`;
+        $tz.textContent = `TZ: ${meta.timezone}`;
+        $where.textContent = `Location: ${label}`;
+      }catch(err){
+        console.error(err);
+        $times.innerHTML = `<tr><td colspan="6" class="muted">Could not load times. Please check your input or try again later.</td></tr>`;
+      }
+    }
+
+    function sanitizeTime(str){
+      // Aladhan returns e.g., "05:08 (IST)"; keep HH:MM and am/pm if present
+      return String(str).replace(/\s*\(.*?\)\s*/g,'');
+    }
+
+    document.getElementById('btnFetch').addEventListener('click', ()=>{
+      const city = document.getElementById('city').value.trim();
+      const country = document.getElementById('country').value.trim();
+      const method = document.getElementById('method').value;
+      if(!city || !country){
+        alert('Please enter both City and Country, or use "Use my location".');
+        return;
+      }
+      fetchTimes(byCity(city, country, method), `${city}, ${country}`);
+    });
+
+    document.getElementById('btnLocate').addEventListener('click', ()=>{
+      if(!('geolocation' in navigator)){
+        alert('Geolocation not supported. Enter City & Country instead.');
+        return;
+      }
+      const method = document.getElementById('method').value;
+      navigator.geolocation.getCurrentPosition(
+        pos=>{
+          const {latitude, longitude} = pos.coords;
+          fetchTimes(byCoords(latitude, longitude, method), `Your location`);
+        },
+        err=>{
+          alert('Location permission denied or unavailable. Enter City & Country instead.');
+        },
+        {enableHighAccuracy:false, timeout:8000, maximumAge:600000}
+      );
+    });
+
+    // Small UX niceties: default to user's country if possible (very light heuristic)
+    (function prefill(){
+      try{
+        const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+        // Quick map for common zones to countries (not exhaustive)
+        const map = {
+          'Asia/Kolkata':'India','Asia/Riyadh':'Saudi Arabia','Asia/Dubai':'United Arab Emirates',
+          'Europe/London':'United Kingdom','America/New_York':'USA','Asia/Jakarta':'Indonesia',
+          'Africa/Cairo':'Egypt','Africa/Casablanca':'Morocco','Asia/Karachi':'Pakistan',
+          'Asia/Dhaka':'Bangladesh','Asia/Kuala_Lumpur':'Malaysia','Asia/Singapore':'Singapore'
+        };
+        const guess = map[tz];
+        if(guess){ document.getElementById('country').value = guess; }
+      }catch{}
+    })();
+  </script>
+</body>
+</html>
