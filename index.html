@@ -16,6 +16,8 @@
   <meta property="og:image" content="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'><rect width='100%' height='100%' fill='%230b3d2e'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='64' fill='white'>islam99</text></svg>" />
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap');
+    
     :root{
       --bg: #f7faf8;
       --card: #ffffff;
@@ -23,13 +25,17 @@
       --muted: #5c746c;
       --brand: #0b3d2e;
       --brand-2: #17a589;
+      --accent: #22d1b5;
       --ring: rgba(23,165,137,.35);
       --shadow: 0 10px 25px rgba(0,0,0,.08);
+      --shadow-lg: 0 20px 40px rgba(0,0,0,.15);
       --radius: 16px;
       --radius-sm: 12px;
       --maxw: 1200px;
-      --gradient: radial-gradient(1200px 600px at 90% -10%, rgba(23,165,137,.15), transparent 60%), radial-gradient(800px 400px at 10% 0%, rgba(11,61,46,.12), transparent 60%), linear-gradient(180deg, #f8fbfa, #eef6f2);
+      --gradient: linear-gradient(135deg, rgba(11,61,46,0.1) 0%, rgba(23,165,137,0.1) 100%);
+      --pattern: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%2317a589' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
     }
+    
     @media (prefers-color-scheme: dark){
       :root{
         --bg: #0e1512;
@@ -37,59 +43,96 @@
         --text: #e8f3ee;
         --muted: #9cb3ab;
         --brand-2:#22d1b5;
-        --gradient: radial-gradient(1200px 600px at 90% -10%, rgba(34,209,181,.2), transparent 60%), radial-gradient(800px 400px at 10% 0%, rgba(23,165,137,.18), transparent 60%), linear-gradient(180deg, #0e1512, #0b1310);
+        --gradient: linear-gradient(135deg, rgba(11,61,46,0.2) 0%, rgba(23,165,137,0.2) 100%);
         --shadow: 0 12px 30px rgba(0,0,0,.35);
+        --pattern: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%2322d1b5' fill-opacity='0.08' fill-rule='evenodd'/%3E%3C/svg%3E");
       }
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Inter,Arial,sans-serif;background:var(--bg);color:var(--text);scroll-behavior:smooth}
-    a{color:var(--brand-2);text-decoration:none}
+    
+    *{box-sizing:border-box; margin:0; padding:0;}
+    html,body{height:100%; margin:0; padding:0; font-family: 'Poppins', system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Inter,Arial,sans-serif; background:var(--bg); color:var(--text); scroll-behavior:smooth; background-image: var(--pattern);}
+    body{display:flex; flex-direction:column;}
+    a{color:var(--brand-2); text-decoration:none; transition: all 0.3s ease;}
+    a:hover{color:var(--accent);}
     a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
       outline: 3px solid var(--ring);
       outline-offset: 2px;
       border-radius: 10px;
     }
-
+    
+    .arabic{font-family: 'Noto Naskh Arabic', serif; font-weight:500;}
+    
     /* Header / Nav */
     header{
-      position:sticky;top:0;z-index:50;
+      position:sticky; top:0; z-index:50;
       backdrop-filter: saturate(120%) blur(8px);
       background: color-mix(in oklab, var(--bg) 85%, transparent);
       border-bottom: 1px solid color-mix(in oklab, var(--text) 10%, transparent);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
     }
     .nav{
-      max-width:var(--maxw);margin:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;gap:10px;
+      max-width:var(--maxw); margin:auto; display:flex; align-items:center; justify-content:space-between; padding:12px 20px; gap:10px;
     }
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--text);letter-spacing:.3px}
-    .brand svg{width:34px;height:34px}
-    .navlinks{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
-    .navlinks a{padding:8px 10px;border-radius:10px;color:var(--text);opacity:.9}
-    .navlinks a:hover{background:color-mix(in oklab, var(--brand) 10%, transparent);color:var(--text)}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800; color:var(--text); letter-spacing:.3px; font-size:1.4rem;}
+    .brand svg{width:38px; height:38px;}
+    .navlinks{display:flex; gap:14px; align-items:center; flex-wrap:wrap}
+    .navlinks a{padding:8px 14px; border-radius:10px; color:var(--text);opacity:.9; font-weight:500; transition: all 0.3s ease;}
+    .navlinks a:hover{background:color-mix(in oklab, var(--brand) 10%, transparent); color:var(--text); transform: translateY(-2px);}
 
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;background:var(--brand);color:#fff;border:none;border-radius:14px;box-shadow:var(--shadow);cursor:pointer;font-weight:700}
-    .btn.secondary{background:var(--brand-2);color:#08201a}
-    .btn.ghost{background:transparent;color:var(--brand-2);border:1.5px solid var(--brand-2)}
-    .btn svg{width:20px;height:20px}
+    .btn{display:inline-flex; align-items:center; gap:10px; padding:14px 22px; background:var(--brand); color:#fff; border:none; border-radius:14px; box-shadow:var(--shadow); cursor:pointer; font-weight:700; transition: all 0.3s ease; font-size:1rem;}
+    .btn:hover{transform: translateY(-3px); box-shadow: var(--shadow-lg); background: #0a3428;}
+    .btn.secondary{background:var(--brand-2); color:#08201a;}
+    .btn.secondary:hover{background: #15b498;}
+    .btn.ghost{background:transparent; color:var(--brand-2); border:1.5px solid var(--brand-2);}
+    .btn.ghost:hover{background: color-mix(in oklab, var(--brand-2) 15%, transparent);}
+    .btn svg{width:20px; height:20px;}
+    
+    .badge{display:inline-flex;align-items:center;gap:8px;background:color-mix(in oklab, var(--brand) 12%, transparent);border:1px solid color-mix(in oklab, var(--brand) 25%, transparent);padding:6px 14px;border-radius:999px;font-weight:500;font-size:0.9rem;}
 
     /* Hero */
     .hero{
       background: var(--gradient);
-      padding: 64px 20px 40px;
+      padding: 80px 20px 60px;
       border-bottom: 1px solid color-mix(in oklab, var(--text) 10%, transparent);
+      position: relative;
+      overflow: hidden;
     }
-    .hero-inner{max-width:var(--maxw);margin:auto;display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
-    .kicker{display:inline-flex;gap:10px;align-items:center;color:var(--brand);font-weight:800;background:color-mix(in oklab, var(--brand) 8%, transparent);padding:6px 10px;border-radius:999px}
-    .title{font-size:clamp(28px,5vw,46px);line-height:1.1;margin:14px 0 8px}
-    .subtitle{color:var(--muted);font-size:clamp(15px,2.2vw,18px);max-width:60ch}
-    .cta{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(34, 209, 181, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: 0;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -150px;
+      left: -100px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(11, 61, 46, 0.12) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: 0;
+    }
+    .hero-inner{max-width:var(--maxw);margin:auto;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;position:relative;z-index:1;}
+    .kicker{display:inline-flex;gap:10px;align-items:center;color:var(--brand);font-weight:800;background:color-mix(in oklab, var(--brand) 8%, transparent);padding:8px 16px;border-radius:999px;margin-bottom:20px;font-size:1rem;}
+    .title{font-size:clamp(32px,5.5vw,54px);line-height:1.15;margin:14px 0 16px;font-weight:800;}
+    .subtitle{color:var(--muted);font-size:clamp(16px,2.2vw,19px);max-width:60ch;line-height:1.6;margin-bottom:10px;}
+    .cta{display:flex;gap:16px;margin-top:28px;flex-wrap:wrap;}
     .mock{
       background: var(--card);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 12px;
+      padding: 16px;
       position: relative;
       aspect-ratio: 3/2;
       overflow: hidden;
+      transform-style: preserve-3d;
     }
     .mock::after{
       content:"";
@@ -100,11 +143,15 @@
       pointer-events:none;
     }
     .phone{
-      width:min(92%,480px);aspect-ratio:9/19;border-radius:28px;border:10px solid #0a0a0a;margin:auto;background:
+      width:min(92%,280px);aspect-ratio:9/19;border-radius:32px;border:12px solid #0a0a0a;margin:auto;background:
         linear-gradient(180deg,#0e1e19,#0c1714);
-      box-shadow: 0 20px 40px rgba(0,0,0,.25);
+      box-shadow: var(--shadow-lg);
       position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-4deg);
       display:grid;place-items:center;overflow:hidden;
+      transition: transform 0.5s ease;
+    }
+    .phone:hover {
+      transform: translate(-50%, -50%) rotate(-2deg) scale(1.02);
     }
     .phone-screen{
       width:100%;height:100%;background:
@@ -113,64 +160,199 @@
       display:grid;grid-template-rows:auto 1fr auto;color:#d9fff5;
       font-weight:600;
     }
-    .phone-top{padding:16px;text-align:center;border-bottom:1px solid rgba(255,255,255,.08)}
-    .phone-body{padding:14px;display:grid;gap:10px;align-content:start}
-    .pill{padding:10px 12px;border:1px solid rgba(255,255,255,.12);border-radius:12px;background:rgba(255,255,255,.03)}
-    .phone-bottom{padding:10px;display:flex;gap:10px;justify-content:center;border-top:1px solid rgba(255,255,255,.08)}
+    .phone-top{padding:16px;text-align:center;border-bottom:1px solid rgba(255,255,255,.08);font-size:1.1rem;}
+    .phone-body{padding:16px;display:grid;gap:12px;align-content:start}
+    .pill{padding:12px 16px;border:1px solid rgba(255,255,255,.12);border-radius:12px;background:rgba(255,255,255,.03);font-size:0.95rem;}
+    .phone-bottom{padding:12px;display:flex;gap:14px;justify-content:center;border-top:1px solid rgba(255,255,255,.08)}
     .dot{width:8px;height:8px;border-radius:999px;background:#22d1b5;box-shadow:0 0 0 6px rgba(34,209,181,.15)}
+    
+    .featured-text {
+      position: relative;
+      display: inline-block;
+    }
+    .featured-text::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--brand), var(--brand-2));
+      border-radius: 2px;
+    }
 
     /* Sections */
-    section{max-width:var(--maxw);margin:0 auto;padding:56px 20px}
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+    section{max-width:var(--maxw);margin:0 auto;padding:70px 20px; position:relative;}
+    .section-title{font-size:clamp(26px,4vw,40px);margin-bottom:40px;text-align:center;font-weight:800;position:relative;}
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--brand), var(--brand-2));
+      border-radius: 2px;
+    }
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
     .card{
       grid-column: span 4;
       background: var(--card);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding:20px;
+      padding:30px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
-    .card h3{margin:0 0 8px}
-    .muted{color:var(--muted)}
-    .features .card{display:flex;gap:12px;align-items:flex-start}
-    .avatar{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--brand-2),#1f8e7a);display:grid;place-items:center;color:#05241b;font-weight:900}
+    .card:hover{transform: translateY(-8px); box-shadow: var(--shadow-lg);}
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--brand), var(--brand-2));
+    }
+    .card h3{margin:0 0 12px; font-size:1.4rem;}
+    .muted{color:var(--muted); line-height:1.6;}
+    .features .card{display:flex;gap:16px;align-items:flex-start}
+    .avatar{flex:0 0 60px;width:60px;height:60px;border-radius:16px;background:linear-gradient(135deg,var(--brand-2),#1f8e7a);display:grid;place-items:center;color:#05241b;font-weight:900;font-size:1.8rem;box-shadow: 0 4px 10px rgba(0,0,0,0.1);}
+    
+    .icon-container {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--brand-2), var(--brand));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .icon-container svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
+    }
 
     /* Learn Section */
     .learn .card{grid-column: span 6}
-    details{border:1px solid color-mix(in oklab, var(--text) 10%, transparent);border-radius:12px;padding:12px;background:color-mix(in oklab, var(--brand) 5%, transparent)}
-    summary{cursor:pointer;font-weight:800}
+    details{border:1px solid color-mix(in oklab, var(--text) 10%, transparent);border-radius:12px;padding:16px;background:color-mix(in oklab, var(--brand) 5%, transparent);margin-bottom:12px;transition: all 0.3s ease;}
+    details:hover {border-color: var(--brand-2);}
+    summary{cursor:pointer;font-weight:700;font-size:1.1rem;display:flex;align-items:center;}
     summary::-webkit-details-marker{display:none}
-    summary::after{content:"+";float:right;font-weight:900}
-    details[open] summary::after{content:"–"}
+    summary::after{content:"+";float:right;font-weight:900;font-size:1.5rem;margin-left:auto;transition: all 0.3s ease;}
+    details[open] summary::after{content:"–";}
+    details[open] {background:color-mix(in oklab, var(--brand) 10%, transparent);}
 
     /* Download cards */
-    .dls .card{grid-column: span 6;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center}
-    .store-badge{display:inline-flex;gap:10px;align-items:center;padding:10px 14px;border-radius:12px;border:1.5px dashed color-mix(in oklab, var(--text) 18%, transparent)}
-    .store-badge svg{width:22px;height:22px}
+    .dls .card{grid-column: span 6;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}
+    .store-badge{display:inline-flex;gap:10px;align-items:center;padding:14px 18px;border-radius:12px;border:1.5px dashed color-mix(in oklab, var(--text) 18%, transparent);transition: all 0.3s ease;font-weight:600;}
+    .store-badge:hover {border-color: var(--brand-2); background: color-mix(in oklab, var(--brand) 5%, transparent); transform: translateY(-3px);}
+    .store-badge svg{width:24px;height:24px;}
 
     /* Prayer Times widget */
-    .widget{display:grid;gap:14px}
-    .w-row{display:flex;gap:10px;flex-wrap:wrap}
+    .widget{display:grid;gap:16px}
+    .w-row{display:flex;gap:14px;flex-wrap:wrap}
     .w-row input,.w-row select{
-      padding:10px 12px;border-radius:12px;border:1px solid color-mix(in oklab, var(--text) 18%, transparent);
-      background:var(--card);color:var(--text)
+      padding:14px 16px;border-radius:12px;border:1px solid color-mix(in oklab, var(--text) 18%, transparent);
+      background:var(--card);color:var(--text);font-size:1rem;flex:1;min-width:200px;
     }
     .table{
-      width:100%;border-collapse:separate;border-spacing:0 8px
+      width:100%;border-collapse:separate;border-spacing:0 10px;
     }
-    .table th,.table td{padding:10px 12px;text-align:left}
+    .table th,.table td{padding:14px 16px;text-align:left}
+    .table th{font-weight:600;color:var(--muted);}
     .table tr{
-      background:var(--card);box-shadow:var(--shadow);
+      background:var(--card);box-shadow:var(--shadow);border-radius:12px;transition: all 0.3s ease;
     }
-    .badge{display:inline-flex;align-items:center;gap:8px;background:color-mix(in oklab, var(--brand) 12%, transparent);border:1px solid color-mix(in oklab, var(--brand) 25%, transparent);padding:6px 10px;border-radius:999px}
+    .table tr:hover {transform: translateY(-3px);}
+    .current-prayer {
+      background: color-mix(in oklab, var(--brand) 15%, transparent) !important;
+      box-shadow: 0 8px 20px rgba(23, 165, 137, 0.2) !important;
+      color: var(--brand-2);
+      font-weight: 600;
+    }
 
     /* FAQ */
     .faq .card{grid-column: span 6}
+    .faq .card h3 {margin-bottom: 12px;}
+
+    /* Contact */
+    .contact-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 40px;
+      grid-column: 1 / -1;
+    }
+    .contact-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    form {
+      display: grid;
+      gap: 20px;
+    }
+    .form-row {
+      display: flex;
+      gap: 20px;
+    }
+    .form-group {
+      flex: 1;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 1px solid color-mix(in oklab, var(--text) 18%, transparent);
+      background: var(--card);
+      color: var(--text);
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--brand-2);
+      box-shadow: 0 0 0 3px var(--ring);
+    }
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+    .submit-btn {
+      display: inline-flex;
+      justify-content: center;
+      width: 200px;
+      margin: 10px auto 0;
+    }
 
     /* Footer */
-    footer{padding:28px 20px;border-top:1px solid color-mix(in oklab, var(--text) 10%, transparent);background:linear-gradient(180deg, transparent, color-mix(in oklab, var(--brand) 6%, transparent))}
-    .foot-inner{max-width:var(--maxw);margin:auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px}
-    .links{display:flex;gap:12px;flex-wrap:wrap}
-    .chip{padding:8px 12px;border-radius:999px;background:var(--card);box-shadow:var(--shadow)}
+    footer{padding:50px 20px 30px;border-top:1px solid color-mix(in oklab, var(--text) 10%, transparent);background:linear-gradient(180deg, transparent, color-mix(in oklab, var(--brand) 6%, transparent));margin-top:auto;}
+    .foot-inner{max-width:var(--maxw);margin:auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;}
+    .links{display:flex;gap:16px;flex-wrap:wrap}
+    .chip{padding:10px 16px;border-radius:999px;background:var(--card);box-shadow:var(--shadow);font-weight:500;transition: all 0.3s ease;}
+    .chip:hover{background:color-mix(in oklab, var(--brand) 10%, transparent);transform: translateY(-3px);}
+    .social-links {display: flex; gap: 16px; margin-top: 20px;}
+    .social-links a {display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: var(--card); color: var(--text); box-shadow: var(--shadow); transition: all 0.3s ease;}
+    .social-links a:hover {background: var(--brand-2); color: #08201a; transform: translateY(-3px);}
+
+    .copyright {
+      width: 100%;
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid color-mix(in oklab, var(--text) 15%, transparent);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
 
     /* Responsive */
     @media (max-width: 980px){
@@ -180,13 +362,20 @@
     @media (max-width: 800px){
       .card{grid-column: span 6}
     }
+    @media (max-width: 640px){
+      .form-row {flex-direction: column; gap: 16px;}
+      .nav {flex-direction: column; padding: 15px;}
+      .navlinks {margin-top: 15px;}
+      .foot-inner {flex-direction: column; text-align: center; align-items: center;}
+      .links {justify-content: center;}
+    }
     @media (max-width: 540px){
       .card,.learn .card,.dls .card,.faq .card{grid-column: 1 / -1}
     }
 
     /* Nice entrances (respect reduced motion) */
     @media (prefers-reduced-motion: no-preference) {
-      [data-animate]{opacity:0;transform:translateY(6px);transition:opacity .6s ease, transform .6s ease}
+      [data-animate]{opacity:0;transform:translateY(20px);transition:opacity .6s ease, transform .6s ease}
       [data-animate].in{opacity:1;transform:none}
     }
   </style>
@@ -205,7 +394,7 @@
               <stop offset="0" stop-color="#22d1b5"/><stop offset="1" stop-color="#0b3d2e"/>
             </linearGradient>
           </defs>
-          <circle cx="32" cy="32" r="30" fill="quran.png"/>
+          <circle cx="32" cy="32" r="30" fill="url(#g)"/>
           <path d="M20 38c4-9 12-14 24-14-6 2-9 6-10 12 5 1 9 4 10 10-6-1-11-4-14-9-2 4-6 6-10 6 0-2 0-3 0-5z" fill="#fff" opacity=".95"/>
         </svg>
         <span>islam99</span>
@@ -227,8 +416,9 @@
       <div class="hero-inner">
         <div>
           <span class="kicker" aria-label="App category">Faith · Learning · Community</span>
-          <h1 id="hero-title" class="title">Discover, learn, and stay connected with <span style="color:var(--brand)">islam99</span>.</h1>
-          <p class="subtitle">A clean, modern companion for Muslims and learners—beautifully organized content about Islam, practical tools like prayer times and Qibla info, and a delightful user experience.</p>
+          <h1 id="hero-title" class="title">Discover, learn, and stay connected with <span class="featured-text">islam99</span>.</h1>
+          <p class="subtitle">A beautiful companion for Muslims and learners—explore Islam with beautifully organized content, prayer times, Qibla direction, and a delightful user experience.</p>
+          <p class="subtitle">"And whoever does righteous deeds, whether male or female, while being a believer - those will enter Paradise." <span class="arabic">(النساء: ١٢٤)</span></p>
           <div class="cta">
             <a class="btn" href="https://drive.google.com/file/d/16EceF6lifNFu_5JoCjjm8yCu6H3uM5SA/view?usp=drivesdk" rel="nofollow noopener" aria-label="Download Android APK">
               <!-- Android icon -->
@@ -242,7 +432,6 @@
             </a>
             <a class="btn ghost" href="#download" aria-label="See all download options">See all options</a>
           </div>
-          <p class="muted" style="margin-top:8px">Replace the two links above with your real store/APK URLs when ready.</p>
         </div>
 
         <!-- App Mockup -->
@@ -254,8 +443,8 @@
                 <div class="pill">Quran • Hadith • Duʿā’</div>
                 <div class="pill">Prayer times & Qibla</div>
                 <div class="pill">Guides for beginners</div>
-                <div style="display:flex;gap:10px;align-items:center;margin-top:4px">
-                  <span class="dot"></span><span>Today • Fajr 5:02</span>
+                <div style="display:flex;gap:10px;align-items:center;margin-top:8px">
+                  <span class="dot"></span><span>Today • Fajr 5:02 AM</span>
                 </div>
               </div>
               <div class="phone-bottom">
@@ -271,10 +460,10 @@
 
     <!-- FEATURES -->
     <section id="features" aria-labelledby="features-title">
-      <h2 id="features-title" class="title" style="font-size:clamp(22px,3.6vw,34px)">What you get with islam99</h2>
+      <h2 id="features-title" class="section-title">What you get with islam99</h2>
       <div class="grid features" role="list">
         <article class="card" role="listitem" data-animate>
-          <div class="avatar">99</div>
+          <div class="avatar">📚</div>
           <div>
             <h3>Beautifully organized knowledge</h3>
             <p class="muted">Clear introductions to beliefs, worship, character, and history—curated for both newcomers and practicing Muslims.</p>
@@ -283,8 +472,8 @@
         <article class="card" role="listitem" data-animate>
           <div class="avatar">🕋</div>
           <div>
-            <h3>Tools you’ll actually use</h3>
-            <p class="muted">Prayer times, Qibla hints, fasting reminders, and quick access to duʿā’ and adhkār collections.</p>
+            <h3>Tools you'll actually use</h3>
+            <p class="muted">Prayer times, Qibla hints, fasting reminders, and quick access to duʿā' and adhkār collections.</p>
           </div>
         </article>
         <article class="card" role="listitem" data-animate>
@@ -299,7 +488,7 @@
 
     <!-- DOWNLOAD -->
     <section id="download" aria-labelledby="download-title">
-      <h2 id="download-title" class="title" style="font-size:clamp(22px,3.6vw,34px)">Download islam99</h2>
+      <h2 id="download-title" class="section-title">Download islam99</h2>
       <div class="grid dls">
         <div class="card" data-animate>
           <div class="avatar">🤖</div>
@@ -341,7 +530,7 @@
 
     <!-- LEARN -->
     <section id="learn" aria-labelledby="learn-title" class="learn">
-      <h2 id="learn-title" class="title" style="font-size:clamp(22px,3.6vw,34px)">Learn about Islam</h2>
+      <h2 id="learn-title" class="section-title">Learn about Islam</h2>
       <div class="grid">
         <article class="card" data-animate>
           <h3>Five Pillars of Islam</h3>
@@ -352,7 +541,7 @@
             </details>
             <details>
               <summary>2. Ṣalāh — Prayer</summary>
-              <p class="muted">Five daily prayers at set times: Fajr, Ẓuhr, ʿAṣr, Maghrib, and ʿIshā’.</p>
+              <p class="muted">Five daily prayers at set times: Fajr, Ẓuhr, ʿAṣr, Maghrib, and ʿIshā'.</p>
             </details>
             <details>
               <summary>3. Zakāh — Almsgiving</summary>
@@ -371,20 +560,20 @@
 
         <article class="card" data-animate>
           <h3>Core Sources & Concepts</h3>
-          <ul class="muted" style="line-height:1.7">
-            <li><strong>Qur’an:</strong> The final revelation in Arabic, preserved and recited by Muslims worldwide.</li>
-            <li><strong>Hadith & Sunnah:</strong> Prophetic teachings and practices explaining the Qur’an’s guidance.</li>
-            <li><strong>ʿAqīdah:</strong> The creed outlining belief in Allah, angels, scriptures, prophets, the Last Day, and divine decree.</li>
-            <li><strong>Adab & Akhlāq:</strong> Etiquette and character—kindness, honesty, patience, and mercy.</li>
+          <ul class="muted" style="line-height:1.7; padding-left:20px;">
+            <li style="margin-bottom:12px;"><strong>Qur'an:</strong> The final revelation in Arabic, preserved and recited by Muslims worldwide.</li>
+            <li style="margin-bottom:12px;"><strong>Hadith & Sunnah:</strong> Prophetic teachings and practices explaining the Qur'an's guidance.</li>
+            <li style="margin-bottom:12px;"><strong>ʿAqīdah:</strong> The creed outlining belief in Allah, angels, scriptures, prophets, the Last Day, and divine decree.</li>
+            <li style="margin-bottom:12px;"><strong>Adab & Akhlāq:</strong> Etiquette and character—kindness, honesty, patience, and mercy.</li>
           </ul>
-          <p class="muted">The islam99 app curates beginner‑friendly guides, duʿā’, and practical checklists for daily worship.</p>
+          <p class="muted">The islam99 app curates beginner‑friendly guides, duʿā', and practical checklists for daily worship.</p>
         </article>
       </div>
     </section>
 
     <!-- PRAYER TIMES -->
     <section id="prayer-times" aria-labelledby="pt-title">
-      <h2 id="pt-title" class="title" style="font-size:clamp(22px,3.6vw,34px)">Today’s Prayer Times</h2>
+      <h2 id="pt-title" class="section-title">Today's Prayer Times</h2>
       <div class="grid">
         <article class="card" style="grid-column:1/-1">
           <div class="widget" aria-live="polite">
@@ -422,7 +611,7 @@
                 </tbody>
               </table>
             </div>
-            <p class="muted" style="margin:6px 2px 0">Powered by the free <a href="https://aladhan.com/prayer-times-api" target="_blank" rel="noopener">Aladhan API</a>. Adjust the calculation method for your region if needed.</p>
+            <p class="muted" style="margin:10px 2px 0">Powered by the free <a href="https://aladhan.com/prayer-times-api" target="_blank" rel="noopener">Aladhan API</a>. Adjust the calculation method for your region if needed.</p>
           </div>
         </article>
       </div>
@@ -430,7 +619,7 @@
 
     <!-- FAQ -->
     <section id="faq" aria-labelledby="faq-title" class="faq">
-      <h2 id="faq-title" class="title" style="font-size:clamp(22px,3.6vw,34px)">Frequently Asked Questions</h2>
+      <h2 id="faq-title" class="section-title">Frequently Asked Questions</h2>
       <div class="grid">
         <article class="card" data-animate>
           <h3>Is the information suitable for beginners?</h3>
@@ -446,24 +635,34 @@
         </article>
         <article class="card" data-animate>
           <h3>How do I suggest improvements?</h3>
-          <p class="muted">Reach us via the contact section or email below. We’d love to hear from you 💡.</p>
+          <p class="muted">Reach us via the contact section or email below. We'd love to hear from you 💡.</p>
         </article>
       </div>
     </section>
 
     <!-- CONTACT -->
     <section id="contact" aria-labelledby="contact-title">
-      <h2 id="contact-title" class="title" style="font-size:clamp(22px,3.6vw,34px)">Contact</h2>
+      <h2 id="contact-title" class="section-title">Contact Us</h2>
       <div class="grid">
-        <article class="card" style="grid-column:1/-1">
-          <p class="muted">Questions, feedback, or collaboration? Send us a message.</p>
+        <article class="contact-card" data-animate>
+          <h3>Have questions or feedback?</h3>
+          <p class="muted" style="text-align:center; margin-bottom:30px;">We're here to help and would love to hear from you.</p>
           <form class="widget" onsubmit="openMail(event)" aria-label="Contact form">
-            <div class="w-row">
-              <input id="name" name="name" placeholder="Your name" required />
-              <input id="email" name="email" type="email" placeholder="Your email" required />
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input id="name" name="name" placeholder="Enter your name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input id="email" name="email" type="email" placeholder="Enter your email" required />
+              </div>
             </div>
-            <textarea id="msg" name="message" rows="4" placeholder="Your message" required style="padding:12px;border-radius:12px;border:1px solid color-mix(in oklab, var(--text) 18%, transparent);background:var(--card);color:var(--text)"></textarea>
-            <button class="btn" type="submit">Send</button>
+            <div class="form-group">
+              <label for="msg">Your Message</label>
+              <textarea id="msg" name="message" placeholder="Type your message here..." required></textarea>
+            </div>
+            <button class="btn submit-btn" type="submit">Send Message</button>
           </form>
         </article>
       </div>
@@ -473,15 +672,25 @@
   <footer role="contentinfo">
     <div class="foot-inner">
       <div class="brand">
-        <svg viewBox="0 0 64 64" aria-hidden="true"><use href="#"/></svg>
+        <svg viewBox="0 0 64 64" aria-hidden="true" width="40" height="40"><use href="#"/></svg>
         <strong>islam99</strong>
       </div>
       <div class="links">
-        <span class="chip">© <span id="year"></span> islam99</span>
+        <a class="chip" href="#features">Features</a>
         <a class="chip" href="#download">Download</a>
         <a class="chip" href="#learn">Learn</a>
         <a class="chip" href="#prayer-times">Prayer Times</a>
-        <a class="chip" href="mailto:hello@islam99.app">hello@islam99.app</a>
+        <a class="chip" href="#faq">FAQ</a>
+        <a class="chip" href="#contact">Contact</a>
+      </div>
+      <div class="social-links">
+        <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23Z"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5Z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3Z"/></svg></a>
+      </div>
+      <div class="copyright">
+        <p>© <span id="year"></span> islam99. All rights reserved.</p>
+        <p style="margin-top:8px;"><a href="#" style="color:var(--muted);">Privacy Policy</a> | <a href="#" style="color:var(--muted);">Terms of Service</a></p>
       </div>
     </div>
   </footer>
@@ -525,21 +734,64 @@
 
     async function fetchTimes(url, label){
       try{
+        // Show loading state
+        $times.innerHTML = `<tr><td colspan="6" class="muted">Loading prayer times...</td></tr>`;
+        
         const res = await fetch(url, {headers:{'Accept':'application/json'}});
         if(!res.ok) throw new Error('Network error');
         const data = await res.json();
         if(data.code !== 200) throw new Error('API error');
         const t = data.data.timings;
         const meta = data.data.meta;
-        $times.innerHTML = `
-          <tr>
-            <td>${sanitizeTime(t.Fajr)}</td>
-            <td>${sanitizeTime(t.Sunrise)}</td>
-            <td>${sanitizeTime(t.Dhuhr)}</td>
-            <td>${sanitizeTime(t.Asr)}</td>
-            <td>${sanitizeTime(t.Maghrib)}</td>
-            <td>${sanitizeTime(t.Isha)}</td>
-          </tr>`;
+        
+        // Determine current prayer time
+        const now = new Date();
+        const currentHours = now.getHours();
+        const currentMinutes = now.getMinutes();
+        const currentTime = currentHours * 60 + currentMinutes;
+        
+        const prayers = [
+          {name: 'Fajr', time: t.Fajr},
+          {name: 'Sunrise', time: t.Sunrise},
+          {name: 'Dhuhr', time: t.Dhuhr},
+          {name: 'Asr', time: t.Asr},
+          {name: 'Maghrib', time: t.Maghrib},
+          {name: 'Isha', time: t.Isha}
+        ];
+        
+        // Convert prayer times to minutes since midnight
+        const prayerTimes = prayers.map(prayer => {
+          const [hours, minutes] = prayer.time.split(':').map(Number);
+          return {name: prayer.name, time: prayer.time, minutes: hours * 60 + minutes};
+        });
+        
+        // Find current prayer
+        let currentPrayer = null;
+        for(let i = prayerTimes.length - 1; i >= 0; i--) {
+          if(currentTime >= prayerTimes[i].minutes) {
+            currentPrayer = prayerTimes[i].name;
+            break;
+          }
+        }
+        if(!currentPrayer) currentPrayer = 'Fajr'; // If before Fajr, next is Fajr
+        
+        // Build table rows
+        let tableHTML = '';
+        prayers.forEach(prayer => {
+          const isCurrent = prayer.name === currentPrayer;
+          tableHTML += `
+            <tr class="${isCurrent ? 'current-prayer' : ''}">
+              <td>${sanitizeTime(prayer.time)}</td>
+              <td>${prayer.name === 'Sunrise' ? sanitizeTime(prayer.time) : '-'}</td>
+              <td>${prayer.name === 'Dhuhr' ? sanitizeTime(prayer.time) : '-'}</td>
+              <td>${prayer.name === 'Asr' ? sanitizeTime(prayer.time) : '-'}</td>
+              <td>${prayer.name === 'Maghrib' ? sanitizeTime(prayer.time) : '-'}</td>
+              <td>${prayer.name === 'Isha' ? sanitizeTime(prayer.time) : '-'}</td>
+            </tr>
+          `;
+        });
+        
+        $times.innerHTML = tableHTML;
         const gDate = data.data.date.readable;
         const hDate = data.data.date.hijri.day + ' ' + data.data.date.hijri.month.en + ' ' + data.data.date.hijri.year + ' AH';
         $dateLabel.textContent = `Date: ${gDate} • ${hDate}`;
@@ -553,7 +805,12 @@
 
     function sanitizeTime(str){
       // Aladhan returns e.g., "05:08 (IST)"; keep HH:MM and am/pm if present
-      return String(str).replace(/\s*\(.*?\)\s*/g,'');
+      const time = String(str).replace(/\s*\(.*?\)\s*/g,'');
+      // Format time to AM/PM
+      const [hours, minutes] = time.split(':').map(Number);
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      const formattedHours = hours % 12 || 12;
+      return `${formattedHours}:${minutes.toString().padStart(2, '0')} ${ampm}`;
     }
 
     document.getElementById('btnFetch').addEventListener('click', ()=>{
@@ -585,7 +842,7 @@
       );
     });
 
-    // Small UX niceties: default to user's country if possible (very light heuristic)
+    // Prefill country based on timezone
     (function prefill(){
       try{
         const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
@@ -600,12 +857,11 @@
         if(guess){ document.getElementById('country').value = guess; }
       }catch{}
     })();
+    
+    // Set today's date in the prayer times section
+    const now = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById('dateLabel').textContent = `Date: ${now.toLocaleDateString(undefined, options)}`;
   </script>
 </body>
-
 </html>
-
-
-
-
-
