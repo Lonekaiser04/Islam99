@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Islam99</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0b3d2e;
+            --primary-light: #17a589;
+            --accent: #22d1b5;
+            --light: #f7faf8;
+            --dark: #11322a;
+            --text: #333;
+            --text-light: #5c746c;
+            --card-bg: #ffffff;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+            --maxw: 1000px;
+        }
+
+        .dark-mode {
+            --primary: #17a589;
+            --primary-light: #22d1b5;
+            --light: #0e1512;
+            --dark: #e8f3ee;
+            --text: #e8f3ee;
+            --text-light: #9cb3ab;
+            --card-bg: #121c18;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+            transition: var(--transition);
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%2317a589' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 15px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            color: var(--text);
+            cursor: pointer;
+            margin-left: 15px;
+        }
+
+        .privacy-header {
+            text-align: center;
+            padding: 80px 0 40px;
+        }
+
+        .privacy-header h1 {
+            font-size: clamp(32px, 5.5vw, 48px);
+            margin-bottom: 15px;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+        }
+
+        .privacy-header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            border-radius: 2px;
+        }
+
+        .privacy-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .privacy-content {
+            max-width: 800px;
+            margin: 0 auto 80px;
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: var(--shadow);
+        }
+
+        .section-title {
+            color: var(--primary);
+            margin: 40px 0 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-light);
+            border-radius: 2px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+
+        .highlight {
+            background: rgba(11, 61, 46, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: var(--primary);
+        }
+
+        .contact-card {
+            background: rgba(11, 61, 46, 0.05);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 40px 0;
+            border-left: 4px solid var(--primary);
+        }
+
+        .contact-card h3 {
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            background: var(--primary);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .contact-email:hover {
+            background: #0a3428;
+            transform: translateY(-3px);
+        }
+
+        .last-updated {
+            text-align: center;
+            padding: 15px;
+            border-top: 1px solid rgba(11, 61, 46, 0.1);
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-top: 40px;
+        }
+
+        footer {
+            background: linear-gradient(180deg, transparent, rgba(11, 61, 46, 0.1));
+            padding: 60px 0 30px;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 30px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .back-home:hover {
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 767px) {
+            .privacy-content {
+                padding: 30px 20px;
+            }
+            
+            .nav-links, .theme-toggle {
+                display: none;
+            }
+            
+            .nav-toggle {
+                display: block;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.3rem;
+            }
+            
+            .privacy-header {
+                padding: 50px 0 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-mosque"></i>
+                </div>
+                islam99
+            </a>
+            
+            <div class="desktop-nav">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="privacy-header">
+            <h1>Privacy Policy</h1>
+            <p>Your privacy is important to us. This policy explains how we handle your information in Islam99.</p>
+        </div>
+        
+        <div class="privacy-content">
+            <p>At Islam99, we respect your privacy and are committed to protecting any personal information you share with us. This Privacy Policy outlines our practices regarding data collection, use, and disclosure.</p>
+            
+            <h2 class="section-title">Information We Collect</h2>
+            <p>Islam99 may collect basic usage data to improve your experience:</p>
+            <ul style="padding-left: 30px; margin-bottom: 25px; color: var(--text);">
+                <li style="margin-bottom: 10px;"><span class="highlight">App usage data</span> - How you interact with features</li>
+                <li style="margin-bottom: 10px;"><span class="highlight">Device information</span> - Device type, OS version</li>
+                <li style="margin-bottom: 10px;"><span class="highlight">Location data</span> - Only for prayer time calculations (optional)</li>
+                <li><span class="highlight">Analytics</span> - Anonymous usage statistics</li>
+            </ul>
+            <p>We do not collect personally identifiable information such as your name, email, or phone number unless you explicitly provide it to us.</p>
+            
+            <h2 class="section-title">How We Use Information</h2>
+            <p>The information we collect is used for the following purposes:</p>
+            <ul style="padding-left: 30px; margin-bottom: 25px; color: var(--text);">
+                <li style="margin-bottom: 10px;">To provide accurate prayer times based on your location</li>
+                <li style="margin-bottom: 10px;">To improve app functionality and user experience</li>
+                <li style="margin-bottom: 10px;">To understand which features are most valuable to users</li>
+                <li>To fix technical issues and optimize performance</li>
+            </ul>
+            
+            <h2 class="section-title">Data Security</h2>
+            <p>We implement appropriate security measures to protect against unauthorized access to or unauthorized alteration, disclosure, or destruction of data.</p>
+            <p>These include internal reviews of our data collection, storage and processing practices, and security measures, as well as physical security measures to guard against unauthorized access to systems.</p>
+            
+            <h2 class="section-title">Third-Party Services</h2>
+            <p>Islam99 may use trusted third-party services that follow strict data protection rules:</p>
+            <ul style="padding-left: 30px; margin-bottom: 25px; color: var(--text);">
+                <li style="margin-bottom: 10px;"><span class="highlight">Analytics providers</span> - To understand app usage patterns</li>
+                <li style="margin-bottom: 10px;"><span class="highlight">Cloud services</span> - For secure data storage</li>
+                <li><span class="highlight">Prayer time APIs</span> - To provide accurate prayer schedules</li>
+            </ul>
+            <p>We carefully select partners who comply with privacy regulations and our own data protection standards.</p>
+            
+            <h2 class="section-title">Children's Privacy</h2>
+            <p>Islam99 does not knowingly collect personal information from children under the age of 13. If we become aware that a child under 13 has provided us with personal information, we will take steps to delete such information.</p>
+            
+            <h2 class="section-title">Your Rights</h2>
+            <p>You have the right to:</p>
+            <ul style="padding-left: 30px; margin-bottom: 25px; color: var(--text);">
+                <li style="margin-bottom: 10px;">Access the personal information we hold about you</li>
+                <li style="margin-bottom: 10px;">Request correction of inaccurate information</li>
+                <li style="margin-bottom: 10px;">Request deletion of your personal information</li>
+                <li>Opt-out of certain data collection activities</li>
+            </ul>
+            
+            <div class="contact-card">
+                <h3>Contact Us</h3>
+                <p>If you have questions about this Privacy Policy or your data, please contact our support team:</p>
+                <p style="margin-top: 20px;">
+                    <a href="mailto:islam99app.helpdesk@gmail.com" class="contact-email">
+                        <i class="fas fa-envelope"></i>
+                        islam99app.helpdesk@gmail.com
+                    </a>
+                </p>
+            </div>
+            
+            <div class="last-updated">
+                <p><strong>Last updated:</strong> August 14, 2025</p>
+                <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+            </div>
+            
+            <a href="index.html" class="back-home">
+                <i class="fas fa-arrow-left"></i>
+                Back to Home
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                &copy; 2025 islam99. All rights reserved. | Privacy Policy |<a href = "terms.html"> Terms of Service </a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            body.classList.add('dark-mode');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+        
+        function toggleTheme() {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        }
+        
+        themeToggle.addEventListener('click', toggleTheme);
+    </script>
+</body>
+</html>
