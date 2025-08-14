@@ -832,6 +832,18 @@
             border-top: 1px solid rgba(0, 0, 0, 0.1);
             color: var(--text-light);
             font-size: 0.9rem;
+                display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--card-bg);
+            border-radius: 50%;
+            color: var(--primary);
+            text-decoration: none;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+                
         }
 
         .mobile-nav {
@@ -952,4 +964,5 @@
             .download-badge {
                 width: 100%;
             }
+
         }
