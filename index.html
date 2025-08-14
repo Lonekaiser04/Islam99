@@ -61,7 +61,7 @@
             <a href="#faq">FAQ</a>
             <a href="#contact">Contact</a>
         </div>
-        <button class="theme-toggle" id="mobileThemeToggle">
+        <button class="btn btn-primary mobile-theme-btn" id="mobileThemeToggle">
             <i class="fas fa-moon"></i> Toggle Theme
         </button>
     </div>
@@ -85,7 +85,7 @@
                         <span class="arabic">(النساء: ١٢٤)</span>
                     </div>
                     <div class="cta-buttons">
-                        <a href="https://drive.google.com/file/d/16EceF6lifNFu_5JoCjjm8yCu6H3uM5SA/view?usp=drivesdk" class="btn btn-primary">
+                        <a href="#" class="btn btn-primary">
                             <i class="fab fa-android"></i>
                             Download for Android
                         </a>
@@ -103,7 +103,7 @@
                             </div>
                             <div class="phone-body">
                                 <div class="pill">
-                                    Quran • Hadith • Duʿā
+                                    Quran • Hadith • Duʿā’
                                 </div>
                                 <div class="pill">
                                     Prayer times & Qibla
@@ -178,11 +178,11 @@
                         <h3 class="download-title">Android</h3>
                         <p class="download-desc">Install via APK or Google Play (when available).</p>
                         <div class="download-badges">
-                            <a href="https://drive.google.com/file/d/16EceF6lifNFu_5JoCjjm8yCu6H3uM5SA/view?usp=drivesdk" class="badge">
+                            <a href="#" class="download-badge">
                                 <i class="fas fa-download"></i>
                                 Download APK
                             </a>
-                            <a href="#" class="badge">
+                            <a href="#" class="download-badge">
                                 <i class="fab fa-google-play"></i>
                                 Google Play
                             </a>
@@ -198,11 +198,11 @@
                         <h3 class="download-title">iOS</h3>
                         <p class="download-desc">Join TestFlight while the App Store release is under review.</p>
                         <div class="download-badges">
-                            <a href="#" class="badge">
+                            <a href="#" class="download-badge">
                                 <i class="fas fa-external-link-alt"></i>
                                 TestFlight
                             </a>
-                            <a href="#" class="badge">
+                            <a href="#" class="download-badge">
                                 <i class="fab fa-app-store"></i>
                                 App Store
                             </a>
@@ -266,8 +266,8 @@
                 <div class="card" style="grid-column:1/-1">
                     <div class="widget" aria-live="polite">
                         <div class="w-row">
-                            <input id="city" name="city" placeholder="City (e.g., Kupwara)" inputmode="text" aria-label="City">
-                            <input id="country" name="country" placeholder="Country or State (e.g. J & K, )" inputmode="text" aria-label="Country">
+                            <input id="city" name="city" placeholder="City (e.g., Mumbai)" inputmode="text" aria-label="City">
+                            <input id="country" name="country" placeholder="Country (e.g., India)" inputmode="text" aria-label="Country">
                             <select id="method" aria-label="Calculation Method" title="Calculation Method">
                                 <option value="2">ISNA</option>
                                 <option value="3">MWL</option>
@@ -291,11 +291,23 @@
                             <table class="table" id="times" aria-describedby="pt-title">
                                 <thead>
                                     <tr>
-                                        <th>Fajr</th><th>Sunrise</th><th>Dhuhr</th><th>Asr</th><th>Maghrib</th><th>Isha</th>
+                                        <th>Fajr</th>
+                                        <th>Sunrise</th>
+                                        <th>Dhuhr</th>
+                                        <th>Asr</th>
+                                        <th>Maghrib</th>
+                                        <th>Isha</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr><td colspan="6" class="muted">Enter a city & country, or use geolocation.</td></tr>
+                                    <tr>
+                                        <td>4:21 AM</td>
+                                        <td>5:54 AM</td>
+                                        <td class="current-prayer">12:37 PM</td>
+                                        <td>4:19 PM</td>
+                                        <td>7:20 PM</td>
+                                        <td>8:50 PM</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -415,9 +427,9 @@
                 <div class="footer-col">
                     <h3>Contact Us</h3>
                     <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-envelope"></i> help.islam99app@gmail.com</a></li>
-                        <li><a href="#"><i class="fas fa-phone-alt"></i> +91 60067-42-403</a></li>
-                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Kashmir, J & K</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> hello@islam99.app</a></li>
+                        <li><a href="#"><i class="fas fa-phone-alt"></i> +1 (123) 456-7890</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Dubai, UAE</a></li>
                     </ul>
                 </div>
             </div>
@@ -427,8 +439,7 @@
             </div>
         </div>
     </footer>
-    <script src="script.js"></script>
+    <script src="script.js"> 
+    </script>
 </body>
-
 </html>
-

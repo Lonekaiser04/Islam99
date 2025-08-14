@@ -1,4 +1,4 @@
-// Theme Toggle
+      // Theme Toggle
         const themeToggle = document.getElementById('themeToggle');
         const mobileThemeToggle = document.getElementById('mobileThemeToggle');
         const body = document.body;
@@ -86,37 +86,19 @@
               {name: 'Isha', time: t.Isha}
             ];
             
-            // Convert prayer times to minutes since midnight
-            const prayerTimes = prayers.map(prayer => {
-              const [hours, minutes] = prayer.time.split(':').map(Number);
-              return {name: prayer.name, time: prayer.time, minutes: hours * 60 + minutes};
-            });
-            
-            // Find current prayer
-            let currentPrayer = null;
-            for(let i = prayerTimes.length - 1; i >= 0; i--) {
-              if(currentTime >= prayerTimes[i].minutes) {
-                currentPrayer = prayerTimes[i].name;
-                break;
-              }
-            }
-            if(!currentPrayer) currentPrayer = 'Fajr'; // If before Fajr, next is Fajr
-            
-            // Build table rows
-            let tableHTML = '';
+            // Build table row with all prayer times
+            let tableHTML = '<tr>';
             prayers.forEach(prayer => {
-              const isCurrent = prayer.name === currentPrayer;
-              tableHTML += `
-                <tr class="${isCurrent ? 'current-prayer' : ''}">
-                  <td>${sanitizeTime(prayer.time)}</td>
-                  <td>${prayer.name === 'Sunrise' ? sanitizeTime(prayer.time) : '-'}</td>
-                  <td>${prayer.name === 'Dhuhr' ? sanitizeTime(prayer.time) : '-'}</td>
-                  <td>${prayer.name === 'Asr' ? sanitizeTime(prayer.time) : '-'}</td>
-                  <td>${prayer.name === 'Maghrib' ? sanitizeTime(prayer.time) : '-'}</td>
-                  <td>${prayer.name === 'Isha' ? sanitizeTime(prayer.time) : '-'}</td>
-                </tr>
-              `;
+              const prayerTime = prayer.time.split(' ')[0]; // Remove timezone if present
+              const [hours, minutes] = prayerTime.split(':').map(Number);
+              const prayerMinutes = hours * 60 + minutes;
+              const isCurrent = currentTime >= prayerMinutes && 
+                                (prayer === prayers[prayers.length-1] || 
+                                 currentTime < prayers[prayers.indexOf(prayer)+1].time.split(' ')[0].split(':').map(Number).reduce((h,m) => h*60+m));
+              
+              tableHTML += `<td class="${isCurrent ? 'current-prayer' : ''}">${sanitizeTime(prayerTime)}</td>`;
             });
+            tableHTML += '</tr>';
             
             $times.innerHTML = tableHTML;
             const gDate = data.data.date.readable;
